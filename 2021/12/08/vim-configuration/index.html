@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html  lang="zh_CN" >
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <title>vim configuration | kingfo's workspace</title>
+    <meta name="description" content="基本配置vim在不安装组件的情况下拥有很多基本的功能，首先我们需要对常用的基本配置进行设置，基本配置已经足够日常使用，基本配置及其相关注释如下： 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859&quot; Basic Setti">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vim configuration">
+<meta property="og:url" content="https://kbrightfall.github.io/kingfo.github.io/2021/12/08/vim-configuration/index.html">
+<meta property="og:site_name" content="kingfo&#39;s workspace">
+<meta property="og:description" content="基本配置vim在不安装组件的情况下拥有很多基本的功能，首先我们需要对常用的基本配置进行设置，基本配置已经足够日常使用，基本配置及其相关注释如下： 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859&quot; Basic Setti">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-12-08T03:31:36.000Z">
+<meta property="article:modified_time" content="2021-12-09T03:55:55.665Z">
+<meta property="article:author" content="kingfo">
+<meta property="article:tag" content="tools">
+<meta name="twitter:card" content="summary">
+
+    
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+
+    
+<link rel="stylesheet" href="/kingfo.github.io/css/common.min.css">
+
+
+
+    
+    
+    
+    
+        <link href="//cdn.jsdelivr.net/npm/lightgallery.js@1.1.3/dist/css/lightgallery.min.css" rel="stylesheet">
+    
+    
+    
+<link rel="stylesheet" href="/kingfo.github.io/css/iconfont.min.css">
+
+    
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+    <body>
+        <header class="header header-fixture">
+    <div class="profile-search-wrap flex sm:block">
+        
+        
+        <div class="profile sm:text-center md:px-1 lg:px-3 sm:pb-4 sm:pt-6">
+            <a id="avatar" role="link" href="https://github.com/fengkx" class="inline-block lg:w-16 lg:h-16 w-8 h-8 m-2" target="_blank" rel="noopener" rel="noreferrer" >
+                <img src="https://www.gravatar.com/avatar/0bc83cb571cd1c50ba6f3e8a78ef1346?s=128" class="rounded-full" alt="avatar">
+            </a>
+            <h2 id="name" class="hidden lg:block">fengkx</h2>
+            <h3 id="title" class="hidden xl:block">Student &amp; Coder</h3>
+            
+            <small id="location" class="hidden lg:block">
+                <i class="iconfont icon-map-icon"></i>
+                Guangzhou, China
+            </small>
+            
+        </div>
+        
+        
+<div class="search flex-1 flex lg:inline-block sm:hidden lg:px-4 lg:mt-2 lg:mb-4 lg:w-full">
+    <form id="search-form" class="my-auto flex-1 lg:border lg:border-solid lg:border-gray-200">
+        <div class="input-group table bg-gray-100 lg:bg-white w-full">
+            <input id="search-input" type="text" placeholder="Search" class="inline-block w-full bg-gray-100 lg:bg-white">
+            <span class="table-cell">
+                <button name="search tigger button" disabled>
+                    <i class="iconfont icon-search m-2"></i>
+                </button>
+            </span>
+        </div>
+    </form>
+        
+<div id="content-json" data-placeholder="Search" class="invisible hidden">/content.json</div>
+<script id="search-teamplate" type="text/html" data-path="/kingfo.github.io/content.json">
+    <div>
+        <div class="search-header bg-gray-400">
+            <input id="actual-search-input" model="keyword" ref="input" class="inline-block w-full h-10 px-2 py-1" placeholder="Search" type="text">
+        </div>
+        <div class="search-result bg-gray-200">
+            {{#each searchPosts}}
+            <a href="/{{ path }}" class="result-item block px-2 pb-3 mb-1 pt-1 hover:bg-indigo-100">
+                <i class="iconfont icon-file"></i>
+                <h1 class="result-title inline font-medium text-lg">{{ title }}</h1>
+                <p class="result-content text-gray-600 text-sm">{{{ text }}}</p>
+            </a>
+            {{/each}}
+        </div>
+    </div>
+</script>
+
+</div>
+
+
+        <button name="menu toogle button" id="menu-toggle-btn" class="block sm:hidden p-3" role="button" aria-expanded="false">
+            <i class="iconfont icon-hamburger"></i>
+        </button>
+    </div>
+    <nav id="menu-nav" class="hidden sm:flex flex-col">
+        
+        
+            <div class="menu-item menu-home" role="menuitem">
+                <a href="/kingfo.github.io/.">
+                    <i class="iconfont icon-home" aria-hidden="true"></i>
+                    <span class="menu-title">Home</span>
+                </a>
+            </div>
+        
+        
+            <div class="menu-item menu-archives" role="menuitem">
+                <a href="/kingfo.github.io/archives">
+                    <i class="iconfont icon-archive" aria-hidden="true"></i>
+                    <span class="menu-title">Archives</span>
+                </a>
+            </div>
+        
+        
+            <div class="menu-item menu-categories" role="menuitem">
+                <a href="/kingfo.github.io/categories">
+                    <i class="iconfont icon-folder" aria-hidden="true"></i>
+                    <span class="menu-title">Categories</span>
+                </a>
+            </div>
+        
+        
+            <div class="menu-item menu-tags" role="menuitem">
+                <a href="/kingfo.github.io/tags">
+                    <i class="iconfont icon-tag" aria-hidden="true"></i>
+                    <span class="menu-title">Tags</span>
+                </a>
+            </div>
+        
+        
+            <div class="menu-item menu-repository" role="menuitem">
+                <a href="/kingfo.github.io/repository">
+                    <i class="iconfont icon-project" aria-hidden="true"></i>
+                    <span class="menu-title">Repository</span>
+                </a>
+            </div>
+        
+        
+            <div class="menu-item menu-links" role="menuitem">
+                <a href="/kingfo.github.io/links">
+                    <i class="iconfont icon-friend" aria-hidden="true"></i>
+                    <span class="menu-title">Links</span>
+                </a>
+            </div>
+        
+        
+            <div class="menu-item menu-about" role="menuitem">
+                <a href="/kingfo.github.io/about">
+                    <i class="iconfont icon-cup" aria-hidden="true"></i>
+                    <span class="menu-title">About</span>
+                </a>
+            </div>
+        
+        
+<div class="social-links flex sm:flex-col lg:hidden mt-5">
+    
+        <span class="social-item text-center">
+            <a target="_blank" rel="noopener" href="https://github.com/fengkx">
+                <i class="iconfont social-icon icon-github"></i>
+                <span class="menu-title hidden lg:inline">menu.github</span>
+            </a>
+        </span>
+    
+        <span class="social-item text-center">
+            <a target="_blank" rel="noopener" href="https://t.me/fengkx">
+                <i class="iconfont social-icon icon-telegram"></i>
+                <span class="menu-title hidden lg:inline">menu.telegram</span>
+            </a>
+        </span>
+    
+        <span class="social-item text-center">
+            <a target="_blank" rel="noopener" href="https://twitter.com/example">
+                <i class="iconfont social-icon icon-twitter"></i>
+                <span class="menu-title hidden lg:inline">menu.twitter</span>
+            </a>
+        </span>
+    
+        <span class="social-item text-center">
+            <a href="/kingfo.github.io/atom.xml">
+                <i class="iconfont social-icon icon-rss"></i>
+                <span class="menu-title hidden lg:inline">menu.rss</span>
+            </a>
+        </span>
+    
+</div>
+
+
+    </nav>
+</header>
+
+        <section class="main-section">
+            
+    <main class="flex-1 px-4 py-14 md:px-5 lg:px-8 lg:py-4 relative min-h-screen">
+    
+
+    <article class="content article article-archives article-type-list" itemscope="">
+        <header class="article-header">
+            
+    
+        <h1 class="article-title text-lg" itemprop="name">
+            vim configuration
+        </h1>
+    
+
+
+
+            <p class="article-meta mb-3 text-xs">
+                <span class="article-date">
+    <i class="iconfont icon-calendar-check"></i>
+	<a href="/kingfo.github.io/2021/12/08/vim-configuration/" class="article-date">
+	  <time datetime="2021-12-08T03:31:36.000Z" itemprop="datePublished">12月 8</time>
+	</a>
+</span>
+
+                
+
+                
+    <span class="article-tags">
+    <i class="iconfont icon-tag"></i>
+    <a class="article-tag-none-link" href="/kingfo.github.io/tags/tools/" rel="tag">tools</a>
+  </span>
+
+
+                <span class="_partial/post-comment"><i class="icon icon-comment"></i>
+                    <a href="/kingfo.github.io/2021/12/08/vim-configuration/#comments" class="article-comment-link">
+                        Comments
+                    </a>
+                </span>
+                
+
+            </p>
+        </header>
+        <div class="marked-body article-body">
+            <h3 id="基本配置"><a href="#基本配置" class="headerlink" title="基本配置"></a>基本配置</h3><p>vim在不安装组件的情况下拥有很多基本的功能，首先我们需要对常用的基本配置进行设置，基本配置已经足够日常使用，基本配置及其相关注释如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line">&quot; Basic Settings</span><br><span class="line">set nocompatible</span><br><span class="line">&quot; detect file type</span><br><span class="line">filetype on</span><br><span class="line">&quot; load plugin for detected file type</span><br><span class="line">filetype plugin on</span><br><span class="line">&quot; load indent file for detected file type</span><br><span class="line">filetype indent on</span><br><span class="line">&quot; syntax highlight</span><br><span class="line">syntax on</span><br><span class="line">set encoding=UTF-8</span><br><span class="line">&quot; Add numbers to each line on the left-hand side.</span><br><span class="line">set number</span><br><span class="line">&quot; highlight current line</span><br><span class="line">set cursorline</span><br><span class="line">&quot; Set shift width to 4 spaces.</span><br><span class="line">set shiftwidth=2</span><br><span class="line">&quot; Set tab width to 4 columns.</span><br><span class="line">set tabstop=4</span><br><span class="line">&quot; Use space characters instead of tabs.</span><br><span class="line">set expandtab</span><br><span class="line">&quot; Set indent style</span><br><span class="line">set cindent</span><br><span class="line">set smartindent</span><br><span class="line">set autoindent</span><br><span class="line">&quot; Do not save backup files.</span><br><span class="line">set nobackup</span><br><span class="line">&quot; Do not let cursor scroll below or above N number of lines when scrolling.</span><br><span class="line">set scrolloff=10</span><br><span class="line"></span><br><span class="line">&quot; set font</span><br><span class="line">set guifont=DroidSansMono_Nerd_Font:h11</span><br><span class="line"></span><br><span class="line">&quot; Use highlighting when doing a search.</span><br><span class="line">set hlsearch</span><br><span class="line">&quot; While searching though a file incrementally highlight matching characters as you type.</span><br><span class="line">set incsearch</span><br><span class="line">&quot; Ignore capital letters during search.</span><br><span class="line">set ignorecase</span><br><span class="line">&quot; Override the ignorecase option if searching for capital letters.</span><br><span class="line">&quot; This will allow you to search specifically for capital letters.</span><br><span class="line">set smartcase</span><br><span class="line"></span><br><span class="line">&quot; Show partial command you type in the last line of the screen.</span><br><span class="line">set showcmd</span><br><span class="line">&quot; Show the mode you are on the last line.</span><br><span class="line">set showmode</span><br><span class="line">&quot; Show matching words during a search.</span><br><span class="line">set showmatch</span><br><span class="line"></span><br><span class="line">&quot; Set the commands to save in history default number is 20.</span><br><span class="line">set history=1000</span><br><span class="line">&quot; Enable auto completion menu after pressing TAB.</span><br><span class="line">set wildmenu</span><br><span class="line">&quot; Make wildmenu behave like similar to Bash completion.</span><br><span class="line">set wildmode=list:longest</span><br><span class="line">&quot; There are certain files that we would never want to edit with Vim.</span><br><span class="line">&quot; Wildmenu will ignore files with these extensions.</span><br><span class="line">set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx</span><br></pre></td></tr></table></figure>
+
+<h3 id="插件安装"><a href="#插件安装" class="headerlink" title="插件安装"></a>插件安装</h3><p>使用<a target="_blank" rel="noopener" href="https://github.com/junegunn/vim-plug">vim_plug</a>插件管理器，并在vimrc配置文件中添加如下代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&quot; -------------------------------- Plugin -------------------------------------------</span><br><span class="line">&quot; Specify a directory for plugins</span><br><span class="line">&quot; - For Neovim: stdpath(&#x27;data&#x27;) . &#x27;/plugged&#x27;</span><br><span class="line">&quot; - Avoid using standard Vim directory names like &#x27;plugin&#x27;</span><br><span class="line">call plug#begin(&#x27;~/.vim/plugged&#x27;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&quot; Initialize plugin system</span><br><span class="line">call plug#end()</span><br></pre></td></tr></table></figure>
+
+<h4 id="常用插件及管理"><a href="#常用插件及管理" class="headerlink" title="常用插件及管理"></a>常用插件及管理</h4><p>将插件的名称与github上的仓库加入call plugin begin 与 end之间即可， 然后打开vim使用PlugInstall进行安装，插件管理命令如下所示：</p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>PlugInstall [name …] [#threads]</td>
+<td>Install plugins</td>
+</tr>
+<tr>
+<td>PlugUpdate [name …] [#threads]</td>
+<td>Install or update plugins</td>
+</tr>
+<tr>
+<td>PlugClean[!]</td>
+<td>Remove unlisted plugins (bang version will clean without prompt)</td>
+</tr>
+<tr>
+<td>PlugUpgrade</td>
+<td>Upgrade vim-plug itself</td>
+</tr>
+<tr>
+<td>PlugStatus</td>
+<td>Check the status of plugins</td>
+</tr>
+<tr>
+<td>PlugDiff</td>
+<td>Examine changes from the previous update and the pending changes</td>
+</tr>
+</tbody></table>
+<h5 id="NERDTree"><a href="#NERDTree" class="headerlink" title="NERDTree"></a>NERDTree</h5><p>主要安装NERDTree以及git组件，可以在目录中显示git状态，加入如下两行代码进行安装：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Plug &#x27;scrooloose/nerdtree&#x27;, &#123; &#x27;on&#x27;:  &#x27;NERDTreeToggle&#x27; &#125;</span><br><span class="line">Plug &#x27;Xuyuanp/nerdtree-git-plugin&#x27;</span><br></pre></td></tr></table></figure>
+<p>插件相关配置如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&quot; set NerdTree plugin</span><br><span class="line">nnoremap &lt;leader&gt;n :NERDTreeFocus&lt;CR&gt;</span><br><span class="line">nnoremap &lt;C-n&gt; :NERDTree&lt;CR&gt;</span><br><span class="line">nnoremap &lt;C-t&gt; :NERDTreeToggle&lt;CR&gt;</span><br><span class="line">&quot; nnoremap &lt;C-f&gt; :NERDTreeFind&lt;CR&gt;</span><br><span class="line"></span><br><span class="line">&quot; Start NERDTree when Vim starts with a directory argument.</span><br><span class="line">autocmd StdinReadPre * let s:std_in=1</span><br><span class="line">autocmd VimEnter * if argc() == 1 &amp;&amp; isdirectory(argv()[0]) &amp;&amp; !exists(&#x27;s:std_in&#x27;) |</span><br><span class="line">    \ execute &#x27;NERDTree&#x27; argv()[0] | wincmd p | enew | execute &#x27;cd &#x27;.argv()[0] | endif</span><br><span class="line">&quot; Exit Vim if NERDTree is the only window remaining in the only tab.</span><br><span class="line">autocmd BufEnter * if tabpagenr(&#x27;$&#x27;) == 1 &amp;&amp; winnr(&#x27;$&#x27;) == 1 &amp;&amp; exists(&#x27;b:NERDTree&#x27;) &amp;&amp; b:NERDTree.isTabTree() | quit | endif</span><br><span class="line">&quot; Close the tab if NERDTree is the only window remaining in it.</span><br><span class="line">autocmd BufEnter * if winnr(&#x27;$&#x27;) == 1 &amp;&amp; exists(&#x27;b:NERDTree&#x27;) &amp;&amp; b:NERDTree.isTabTree() | quit | endif</span><br><span class="line">&quot; Start NERDTree. If a file is specified, move the cursor to its window.</span><br><span class="line">autocmd StdinReadPre * let s:std_in=1</span><br><span class="line">autocmd VimEnter * NERDTree | if argc() &gt; 0 || exists(&quot;s:std_in&quot;) | wincmd p | endif</span><br></pre></td></tr></table></figure>
+
+<h4 id="Taglist"><a href="#Taglist" class="headerlink" title="Taglist"></a>Taglist</h4><p>功能：利用ctags生成当前文件所有的类以及类型符号<br>使用taglist需要满足的条件有：</p>
+<ul>
+<li>打开文件的自己检测功能：filetype on</li>
+<li>系统中安装exuberant ctags工具 </li>
+<li>并且vim支持system()调用</li>
+</ul>
+<p>然后在vimrc中添加安装taglist的地址：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Plug &#x27;vim-scripts/taglist.vim&#x27;</span><br></pre></td></tr></table></figure>
+
+<p>安装之后进行相关的配置：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&quot; set TagList plugin</span><br><span class="line">let Tlist_Ctags_Cmd=&quot;/usr/local/bin/ctags&quot;</span><br><span class="line">let Tlist_Use_Right_Window = 1</span><br><span class="line">let Tlist_Exit_OnlyWindow = 1</span><br><span class="line">let Tlist_Show_One_File = 1</span><br><span class="line">&quot; let Tlist_Sort_Type = &quot;name&quot;</span><br><span class="line">let Tlist_Auto_Open = 1</span><br></pre></td></tr></table></figure>
+
+<h4 id="DelimitMate"><a href="#DelimitMate" class="headerlink" title="DelimitMate"></a>DelimitMate</h4><p>功能：自动匹配括号与引号<br>安装地址及相关配置如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Plug &#x27;Raimondi/delimitMate&#x27;</span><br><span class="line"></span><br><span class="line">&quot; set DelimitMate plugin</span><br><span class="line">&quot; close auto close function</span><br><span class="line">&quot; let b:delimitMate_autoclose = 0</span><br><span class="line">&quot; close auto close function for python files</span><br><span class="line">&quot; au FileType python let b:delimitMate_autoclose = 0</span><br></pre></td></tr></table></figure>
+        </div>
+        
+
+    </article>
+    
+    <section id="comments">
+        
+    </section>
+
+
+    
+
+</main>
+
+
+<aside style="" id="sidebar" class="aside aside-fixture">
+    <div class="toc-sidebar">
+        <nav id="toc" class="article-toc">
+            <h3 class="toc-title">Catalogue</h3>
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE"><span class="toc-number">1.</span> <span class="toc-text">基本配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8F%92%E4%BB%B6%E5%AE%89%E8%A3%85"><span class="toc-number">2.</span> <span class="toc-text">插件安装</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E6%8F%92%E4%BB%B6%E5%8F%8A%E7%AE%A1%E7%90%86"><span class="toc-number">2.1.</span> <span class="toc-text">常用插件及管理</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#NERDTree"><span class="toc-number">2.1.1.</span> <span class="toc-text">NERDTree</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Taglist"><span class="toc-number">2.2.</span> <span class="toc-text">Taglist</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#DelimitMate"><span class="toc-number">2.3.</span> <span class="toc-text">DelimitMate</span></a></li></ol></li></ol>
+        </nav>
+    </div>
+</aside>
+
+
+
+
+
+        </section>
+        <footer class="hidden lg:block fixed bottom-0 left-0 sm:w-1/12 lg:w-1/6 bg-gray-100 z-40">
+    
+    <div class="footer-social-links">
+        
+            <a target="_blank" rel="noopener" href="https://github.com/fengkx">
+                <i class="iconfont icon-github"></i>
+            </a>
+        
+            <a target="_blank" rel="noopener" href="https://t.me/fengkx">
+                <i class="iconfont icon-telegram"></i>
+            </a>
+        
+            <a target="_blank" rel="noopener" href="https://twitter.com/example">
+                <i class="iconfont icon-twitter"></i>
+            </a>
+        
+            <a href="/kingfo.github.io/atom.xml">
+                <i class="iconfont icon-rss"></i>
+            </a>
+        
+    </div>
+    
+    
+</footer>
+
+        <div id="mask" class="hidden mask fixed inset-0 bg-gray-900 opacity-75 z-40"></div>
+        <div id="search-view-container" class="hidden shadow-xl"></div>
+        
+<script src="/kingfo.github.io/js/dom-event.min.js"></script>
+
+
+
+<script src="/kingfo.github.io/js/local-search.min.js"></script>
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/lightgallery.js@1.1.3/dist/js/lightgallery.min.js"></script>
+    
+<script src="/kingfo.github.io/js/light-gallery.min.js"></script>
+
+
+
+
+
+
+    </body>
+</html>
